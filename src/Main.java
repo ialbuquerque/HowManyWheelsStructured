@@ -1,17 +1,17 @@
 import java.util.Scanner;
 
 public class Main {
-    static int response = -1;
+    static String response = "";
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        while (response != 0) {
+        while (!response.equals("9")) {
             getUserInput();
-            if (response == 1) {
+            if (response.equals("1")) {
                 System.out.println("\nA quantidade de rodas do carro é 4\n\n");
-            } else if (response == 2) {
+            } else if (response.equals("2")) {
                 System.out.println("\nA quantidade de rodas da moto é 2\n\n");
-            } else if (response == 9) {
+            } else if (response.equals("9")) {
                 System.out.println("Você está finalizando o programa!");
                 break;
             } else {
@@ -21,7 +21,11 @@ public class Main {
     }
 
     static void getUserInput() {
-        System.out.println("Saiba quantas rodas tem o seu automóvel. Digite:\n1 para carro\n2 para moto\n9 para sair\nResposta: ");
-        response = scanner.nextInt();
+        System.out.print("Saiba quantas rodas tem o seu automóvel. Digite:\n" +
+                "1 para carro\n" +
+                "2 para moto\n" +
+                "9 para sair\n" +
+                "Resposta: ");
+        response = scanner.nextLine();
     }
 }
